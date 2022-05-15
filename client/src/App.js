@@ -5,6 +5,16 @@ import axios from "axios";
 function App() {
   const [color, setColor] = useState("");
   const [quantity, setQuantity] = useState("");
+  const [paints, setPaints] = useState([]);
+
+
+  useEffect(() => {
+    axios.get('http://localhost:5000/api/get')
+    .then((response) => {
+      setPaints(response.data)
+    //  console.log(response.data);
+    })
+  }, [])
 
   const submitInput = () => {
     axios
@@ -34,6 +44,11 @@ function App() {
           onChange={(e) => setQuantity(e.target.value)}
         />
         <button onClick={submitInput}>Submit</button>
+       
+        {paints.map((val) => {
+          return <p>Paint Color: {val.color} |
+          Paint Quantity: {val.quantity}</p>
+        })}
       </div>
     </div>
   );
