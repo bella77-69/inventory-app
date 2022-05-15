@@ -3,44 +3,26 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const app = express();
 const mysql = require("mysql");
-const PORT = process.env.PORT || 5000;
 
-const db = mysql.createPool({
-  host: "localhost",
-  user: "root",
-  password: "rootroot",
-  database: "inventory-stock-status",
-});
+//set up server port
+const PORT = process.env.PORT || 5000;
 
 app.use(cors());
 app.use(express.json());
+
+//parse request data content
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get("/api/get", (req, res) => {
-  const sqlSelect = "SELECT * FROM paint_inventory";
-  db.query(sqlSelect, (err, result) => {
-    // console.log(result);
-    res.send(result)
-  });
+//define root route
+app.get("/", (req, res) => {
+  res.send("Welcome to Inventory App API");
 });
 
-app.post("/api/insert", (req, res) => {
-  const color = req.body.color;
-  const quantity = req.body.quantity;
+//import inventory routes
+const inventoryRoutes = require("./routes/inventory.route");
 
-  const sqlInsert =
-    "INSERT INTO paint_inventory (color, quantity) VALUES (?,?);";
-  db.query(sqlInsert, [color, quantity], (err, result) => {
-    console.log(result);
-  });
-});
-
-// app.get("/", (req, res) => {
-//     // const sqlInsert = "INSERT INTO paint_inventory (color, inStock, quantity) VALUES ('blue', true, '100');"
-//     // db.query(sqlInsert, (err, result) => {
-//     //     res.send("hello");
-//     // })
-// });
+//create inventory routs
+app.use("/api/inventory", inventoryRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server connected to port: ${PORT}`);
