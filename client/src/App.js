@@ -1,18 +1,24 @@
 import "./App.css";
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import InventoryList from "./components/Inventory/InventoryList";
-import EditInventory from './components/Inventory/EditInventory';
-function App() {
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Home from "./components/Home/Home";
+import RegistrationForm from "./components/RegistrationForm/RegistrationForm";
+import AdminInventory from "./components/AdminInventory/AdminInventory";
+import LoginForm from "./components/LoginForm/LoginForm";
+import Nav from "./components/Nav/Nav";
 
+function App() {
   return (
-  <Router>
     <div className="App">
-      <Switch>
-        <Route path='/' exact component={InventoryList} />
-      {/* <Route path='/edit/:id'exact component={EditInventory} />   */}
-      </Switch>
+      <Router>
+        <Nav />
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/admin" exact component={RegistrationForm} />
+          <Route path="/admin/inventory" exact component={AdminInventory} />
+          <Route path="/login" exact component={LoginForm} />
+        </Switch>
+      </Router>
     </div>
-  </Router>
   );
 }
 

@@ -3,6 +3,9 @@ const dbConn = require("../config/db.config");
 const Inventory = function (inventory) {
   this.color = inventory.color;
   this.quantity = inventory.quantity;
+  this.available = inventory.available;
+  this.runninglow = inventory.runninglow;
+  this.outofstock = inventory.outofstock;
 };
 
 //get all inventory
@@ -66,8 +69,8 @@ Inventory.getInventoryByID = (id, result) => {
 //update inventory
 Inventory.updateInventory = (id, inventoryReqData, result) => {
   dbConn.query(
-    "UPDATE paint_inventory SET color=?, quantity=? WHERE id = ?",
-    [inventoryReqData.color, inventoryReqData.quantity, id],
+    "UPDATE paint_inventory SET  quantity=?, available=?, runninglow=?, outofstock=? WHERE id = ?",
+    [ inventoryReqData.quantity, inventoryReqData.available, inventoryReqData.runninglow, inventoryReqData.outofstock, id],
     (err, res) => {
       if (err) {
         console.log("Error while updating inventory");

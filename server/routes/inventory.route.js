@@ -11,7 +11,7 @@ router.get("/:id", inventoryController.getInventoryByID);
 
 // get ID for Update
 router.get(
-  "/searchRecord/:first_name",
+  "/searchRecord/:color",
   inventoryController.getInventoryByColor
 );
 

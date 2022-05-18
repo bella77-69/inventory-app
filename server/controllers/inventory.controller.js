@@ -52,7 +52,7 @@ exports.getInventoryByID = (req, res) => {
 // update inventory
 exports.updateInventory = (req, res) => {
   const inventoryReqData = new InventoryModel(req.body);
-  console.log("inventoryReqData update", inventoryReqData);
+  //console.log("inventoryReqData update", inventoryReqData);
   // check null
   if (req.body.constructor === Object && Object.keys(req.body).length === 0) {
     res.send(400).send({ success: false, message: "Please fill all fields" });

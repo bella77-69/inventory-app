@@ -1,0 +1,20 @@
+@import '../../styles/mixins';
+
+.section {
+    text-align: center;
+    margin-bottom: 2rem;
+  
+  &-title  {
+    font-size: 2rem;
+    letter-spacing: .187rem;
+    text-transform: capitalize;
+    color: $font;
+  }
+  
+  &-div {
+    width: 15rem;
+    height: 5px;
+    margin: 0 auto;
+    background: $break;
+  }
+}

@@ -18,11 +18,12 @@ app.get("/", (req, res) => {
   res.send("Welcome to Inventory App API");
 });
 
-//import inventory routes
+//import inventory/admin routes
 const inventoryRoutes = require("./routes/inventory.route");
-
-//create inventory routs
+const adminRoutes = require("./routes/admin.route");
+//create inventory/admin routs
 app.use("/api/inventory", inventoryRoutes);
+app.use("/api/inventory/admin", adminRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server connected to port: ${PORT}`);

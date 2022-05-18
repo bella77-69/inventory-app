@@ -1,0 +1,35 @@
+$grey: #d9d9d9;
+$font: #737373;
+$black: #000;
+$white: #FDFEFE;
+$span: #515355;
+$underline: rgb(240, 197, 226);
+$highlight: #757272;
+$background: #4c4d4e;
+$shade: #b8b3b3;
+$shading: rgb(240, 236, 234);
+$active: #c0c0c0;
+$break: #cecaca;
+$border:#a9a09f; 
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee&family=Satisfy&display=swap');
+
+//media breakpoint for mobile
+@mixin mobile {
+    @media screen and (max-width: 767px) {
+      @content;
+    }
+}
+
+//media breakpoints for tablet */
+@mixin tablet {
+    @media screen and (min-width: 368px) {
+      @content;
+    }
+}
+
+//media breakpoints for desktop 
+@mixin desktop {
+  @media screen and (min-width: 1280px) {
+    @content;
+    }
+}
