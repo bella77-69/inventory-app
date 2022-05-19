@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import axios from "axios";
-// import "./LoginForm.css";
 import { useHistory } from "react-router-dom";
 
 function LoginForm(props) {
@@ -9,6 +8,7 @@ function LoginForm(props) {
     password: "",
     successMessage: null,
   });
+
   const history = useHistory();
   const handleChange = (e) => {
     const { id, value } = e.target;
@@ -26,20 +26,16 @@ function LoginForm(props) {
     };
     axios
       .post("http://localhost:5000/api/inventory/admin", data)
-      .then(function (response) {
+      .then((response) => {
         if (response.status === 200) {
           setState((prevState) => ({
             ...prevState,
             successMessage: "Login successful. Redirecting to home page..",
           }));
           history.push("/admin/inventory");
-        } else if (response.code === 204) {
-          props.showError("Username and password do not match");
-        } else {
-          props.showError("Username does not exists");
         }
       })
-      .catch(function (error) {
+      .catch((error) => {
         console.log(error);
       });
   };
@@ -84,13 +80,6 @@ function LoginForm(props) {
             Submit
           </button>
         </form>
-        <div
-          className="alert alert-success mt-2"
-          style={{ display: state.successMessage ? "block" : "none" }}
-          role="alert"
-        >
-          {state.successMessage}
-        </div>
       </div>
     </div>
   );

@@ -3,6 +3,7 @@ const dbConn = require('../config/db.config');
 const Admin = function (user) {
     this.email = user.email;
     this.password = user.password;
+    this.confirmPassword = user.confirmPassword;
 }
 
 Admin.getAllUsers  = function(result){

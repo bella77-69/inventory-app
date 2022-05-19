@@ -6,6 +6,7 @@ function RegistrationForm(props) {
   const [state, setState] = useState({
     email: "",
     password: "",
+    confirmPassword: "",
     successMessage: null,
   });
   const history = useHistory();
@@ -18,34 +19,29 @@ function RegistrationForm(props) {
   };
   const sendDetailsToServer = () => {
     if (state.email.length && state.password.length) {
-      props.showError(null);
-      const payload = {
+ 
+      const data = {
         email: state.email,
         password: state.password,
+        confirmPassword: state.confirmPassword
       };
       axios
-        .post("http://localhost:5000/api/inventory/admin/", payload)
+        .post("http://localhost:5000/api/inventory/admin/", data)
         .then(function (response) {
           if (response.status === 200) {
             setState((prevState) => ({
               ...prevState,
               successMessage:
-                "Registration successful. Redirecting to home page..",
-                
+                "Registration successful. Redirecting to admin inventory page..",
             }));
             history.push("/admin/inventory");
             console.log(response);
-            props.showError(null);
-          } else {
-            props.showError("Some error ocurred");
-          }
+          } 
         })
-        .catch(function (error) {
+        .catch((error) => {
           console.log(error);
         });
-    } else {
-      props.showError("Please enter valid email and password");
-    }
+    } 
   };
 
   const redirectToLogin = () => {
