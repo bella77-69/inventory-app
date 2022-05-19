@@ -8,7 +8,7 @@ export default class AdminInventory extends React.Component {
   };
 
   componentDidMount() {
-    axios.get(`https://elmsd-inventory-app.herokuapp.com/api/inventory`).then((response) => {
+    axios.get(`http://localhost:5000/api/inventory`).then((response) => {
       const items = response.data;
       this.setState({ items });
     });
@@ -16,7 +16,7 @@ export default class AdminInventory extends React.Component {
 
   deleteRow(id, e) {
     axios
-      .delete(`https://elmsd-inventory-app.herokuapp.com/api/inventory/${id}`)
+      .delete(`http://localhost:5000/api/inventory/${id}`)
       .then((response) => {
         console.log(response.data);
 

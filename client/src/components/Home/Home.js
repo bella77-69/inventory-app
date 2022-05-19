@@ -10,7 +10,7 @@ class Home extends Component {
 
   componentDidMount() {
     axios
-      .get("https://elmsd-inventory-app.herokuapp.com/api/inventory")
+      .get("http://localhost:5000/api/inventory")
       .then((response) => {
         this.setState({ items: response.data, activeItems: response.data[0] });
       })
@@ -21,7 +21,7 @@ class Home extends Component {
 
   getItemById(id) {
     axios
-      .get(`https://elmsd-inventory-app.herokuapp.com/api/inventory${id}`)
+      .get(`http://localhost:5000/api/inventory${id}`)
       .then((response) => {
         this.setState({ activeItems: response.data });
       })
