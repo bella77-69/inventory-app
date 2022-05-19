@@ -10,6 +10,7 @@ const PORT = 5000;
 app.use(cors());
 app.use(express.json());
 
+
 //parse request data content
 app.use(bodyParser.urlencoded({ extended: true }));
 
