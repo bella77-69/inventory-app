@@ -5,14 +5,10 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
-    "devStart": "nodemon server.js"
+    "start": "node server.js"
   },
   "author": "bella77-69",
   "license": "ISC",
-  "devDependencies": {
-    "nodemon": "^2.0.16"
-  },
   "dependencies": {
     "body-parser": "^1.20.0",
     "cors": "^2.8.5",
