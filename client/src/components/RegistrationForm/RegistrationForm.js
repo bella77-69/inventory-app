@@ -24,7 +24,7 @@ function RegistrationForm(props) {
         password: state.password,
       };
       axios
-        .post("http://localhost:5000/api/inventory/admin/", payload)
+        .post("https://elmsd-inventory-app.herokuapp.com/admin/", payload)
         .then(function (response) {
           if (response.status === 200) {
             setState((prevState) => ({

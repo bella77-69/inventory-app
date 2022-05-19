@@ -5,7 +5,7 @@ const app = express();
 const mysql = require("mysql");
 
 //set up server port
-const PORT = process.env.PORT || 5000;
+const PORT = 5000;
 
 app.use(cors());
 app.use(express.json());
@@ -25,8 +25,7 @@ const adminRoutes = require("./routes/admin.route");
 app.use("/api/inventory", inventoryRoutes);
 app.use("/api/inventory/admin", adminRoutes);
 
-app.listen(PORT, () => {
+app.listen(process.env.PORT || PORT, () => {
   console.log(`Server connected to port: ${PORT}`);
 });
 
-//npm run devStart to start nodemon
