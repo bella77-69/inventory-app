@@ -13,5 +13,9 @@ Chantelle Pasceri
 
 4. In the project directory, you can run: `npm run devStart`
 
+## Login
+
+email address: admin@admin.com
+password: password
 
 
