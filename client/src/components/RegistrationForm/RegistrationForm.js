@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import "./RegistrationForm.css";
-import { withRouter, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 function RegistrationForm(props) {
   const [state, setState] = useState({
@@ -23,7 +22,6 @@ function RegistrationForm(props) {
       const payload = {
         email: state.email,
         password: state.password,
-        // "password": state.password
       };
       axios
         .post("http://localhost:5000/api/inventory/admin/", payload)
@@ -33,8 +31,9 @@ function RegistrationForm(props) {
               ...prevState,
               successMessage:
                 "Registration successful. Redirecting to home page..",
+                
             }));
-            redirectToAdminInv();
+            history.push("/admin/inventory");
             console.log(response);
             props.showError(null);
           } else {
@@ -48,9 +47,7 @@ function RegistrationForm(props) {
       props.showError("Please enter valid email and password");
     }
   };
-  const redirectToAdminInv = () => {
-    history.push("/admin/inventory");
-  };
+
   const redirectToLogin = () => {
     history.push("/login");
   };
@@ -63,7 +60,9 @@ function RegistrationForm(props) {
     }
   };
   return (
-    <div className="card col-12 col-lg-4 login-card mt-2 hv-center">
+    <div className="container mt-5">
+       <h2 className="h2 text-center mb-4 mt-3 mx-2">Register</h2>
+    <div className="card col-12 col-lg-4 login-card mt-2 hv-center ">
       <form>
         <div className="form-group text-left">
           <label htmlFor="exampleInputEmail1">Email address</label>
@@ -124,7 +123,8 @@ function RegistrationForm(props) {
         </span>
       </div>
     </div>
+    </div>
   );
 }
 
-export default withRouter(RegistrationForm);
+export default RegistrationForm;

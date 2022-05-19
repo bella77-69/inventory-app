@@ -1,8 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 function InventoryHome({ items }) {
-  console.log({ items });
   const showItem = (item, index) => {
     return (
       <tr key={index}>
@@ -18,9 +16,9 @@ function InventoryHome({ items }) {
   return (
     <div className="container">
       <div className="row">
-        <h2>Items</h2>
+        <h2 className="h2 text-center mb-4 mt-3 mx-2">Paint Inventory</h2>
       </div>
-      <table className="table table-striped">
+      <table className="table table-striped table-responsive">
         <thead>
           <tr>
             <th scope="col">Color</th>
@@ -32,11 +30,6 @@ function InventoryHome({ items }) {
         </thead>
         <tbody>{items.map(showItem)}</tbody>
       </table>
-      <div>
-        <Link to="/admin/inventory">
-          <button className="link-btn">Admin</button>
-        </Link>
-      </div>
     </div>
   );
 }

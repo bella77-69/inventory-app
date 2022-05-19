@@ -8,26 +8,30 @@ export default class AdminInventory extends React.Component {
   };
 
   componentDidMount() {
-    axios.get(`http://localhost:5000/api/inventory`).then((res) => {
-      const items = res.data;
+    axios.get(`http://localhost:5000/api/inventory`).then((response) => {
+      const items = response.data;
       this.setState({ items });
     });
   }
 
   deleteRow(id, e) {
-    axios.delete(`http://localhost:5000/api/inventory/${id}`).then((res) => {
-      console.log(res);
-      console.log(res.data);
+    axios
+      .delete(`http://localhost:5000/api/inventory/${id}`)
+      .then((response) => {
+        console.log(response.data);
 
-      const items = this.state.items.filter((item) => item.id !== id);
-      this.setState({ items });
-    });
+        const items = this.state.items.filter((item) => item.id !== id);
+        this.setState({ items });
+      });
   }
 
   render() {
     return (
       <div className="container">
-        <table className="table table-striped">
+        <div className="row mx-4 ">
+          <h2 className="h2 text-center mb-4 mt-3 ">Paint Inventory</h2>
+        </div>
+        <table className="table table-striped table-responsive mx-4">
           <thead>
             <tr>
               <th scope="col">Id</th>
@@ -61,9 +65,7 @@ export default class AdminInventory extends React.Component {
             ))}
           </tbody>
         </table>
-        <div>
-          <EditInventory />
-        </div>
+        <EditInventory />
       </div>
     );
   }
