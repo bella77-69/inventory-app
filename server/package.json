@@ -6,12 +6,14 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "devStart": "nodemon server.js"
+    "devStart": "nodemon server.js",
+    "build": "npm run build --prefix client"
   },
   "author": "bella77-69",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.20.0",
+    "concurrently": "^7.2.0",
     "cors": "^2.8.5",
     "express": "^4.18.1",
     "mysql": "^2.18.1"
