@@ -3,14 +3,16 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const app = express();
 const mysql = require("mysql");
-
+const path = require('path');
 //set up server port
 const PORT = 5000;
 
-app.use(cors());
+
 app.use(express.json());
 
-
+const buildPath = path.join(__dirname, '..', 'build');
+app.use(express.static(buildPath));
+app.use(cors());
 //parse request data content
 app.use(bodyParser.urlencoded({ extended: true }));
 

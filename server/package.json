@@ -4,7 +4,6 @@
   "description": "Inventory App: Stock-status code challenge, using CRUD",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
     "devStart": "nodemon server.js"
   },
