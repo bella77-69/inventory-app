@@ -23,7 +23,7 @@ function EditInventory(props) {
       };
       try {
         const res = await axios.put(
-          `http://localhost:5000/api/inventory/${id}`,
+          `https://elmsd-inventory-app.herokuapp.com/${id}`,
           putData
         );
         const result = {
