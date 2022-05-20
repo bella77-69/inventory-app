@@ -17,8 +17,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 this.app.use(express.static(path.join(__dirname, "../client/build")));
 
 //define root route
-app.get("/", (req, res) => {
-  res.send("Welcome to Inventory App API");
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../client/build/index.html"));
 });
 
 //import inventory/admin routes
