@@ -12,6 +12,7 @@ class Home extends Component {
     axios
       .get("http://localhost:5000/api/inventory")
       .then((response) => {
+        console.log(response)
         this.setState({ items: response.data, activeItems: response.data[0] });
       })
       .catch((error) => {

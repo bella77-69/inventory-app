@@ -1,6 +1,7 @@
 import React from "react";
 
 function InventoryHome({ items }) {
+  console.log(items)
   const showItem = (item, index) => {
     return (
       <tr key={index}>
