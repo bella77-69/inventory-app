@@ -10,7 +10,7 @@ class Home extends Component {
 
   componentDidMount() {
     axios
-      .get("api/inventory")
+      .get("http://localhost:5000/api/inventory")
       .then((response) => {
         console.log(response)
         this.setState({ items: response.data, activeItems: response.data[0] });
