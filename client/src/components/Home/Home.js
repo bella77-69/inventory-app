@@ -10,7 +10,7 @@ class Home extends Component {
 
   componentDidMount() {
     axios
-      .get("http://localhost:5000/api/inventory")
+      .get("https://stock-status-inventory-app.herokuapp.com/api/inventory")
       .then((response) => {
         console.log(response)
         this.setState({ items: response.data, activeItems: response.data[0] });
@@ -22,7 +22,7 @@ class Home extends Component {
 
   getItemById(id) {
     axios
-      .get(`http://localhost:5000/api/inventory${id}`)
+      .get(`https://stock-status-inventory-app.herokuapp.com/api/inventory${id}`)
       .then((response) => {
         this.setState({ activeItems: response.data });
       })
