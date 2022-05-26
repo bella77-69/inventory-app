@@ -23,7 +23,7 @@ function EditInventory(props) {
       };
       try {
         const res = await axios.put(
-          `https://stock-status-inventory-app.herokuapp.com/api/inventory/${id}`,
+          `http://localhost:5000/api/inventory/${id}`,
           putData
         );
         const result = {
