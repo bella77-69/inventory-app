@@ -16,11 +16,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 const PORT = process.env.PORT || 5000;
 
 // ... other app.use middleware 
-app.use(express.static(path.join(__dirname, "client")))
+app.use(express.static(path.join(__dirname, "client", "build")))
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "client"));
+  res.sendFile(path.join(__dirname, "client", "build", "index.html"));
 });
-
 app.listen(process.env.PORT || 5000, () => {
   console.log(`Server connected to port: ${PORT}`);
 });
