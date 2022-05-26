@@ -4,21 +4,22 @@
     "description": "Inventory App: Stock-status code challenge, using CRUD",
     "main": "server.js",
     "scripts": {
-    "start": "node server.js",
-    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
-  },
+        "start": "node server.js",
+        "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
+    },
     "author": "bella77-69",
     "license": "ISC",
     "dependencies": {
-      "body-parser": "^1.20.0",
-      "cors": "^2.8.5",
-      "express": "^4.18.1",
-      "mysql": "^2.18.1"
+        "body-parser": "^1.20.0",
+        "cors": "^2.8.5",
+        "dotenv": "^16.0.1",
+        "express": "^4.18.1",
+        "mysql": "^2.18.1"
     },
     "devDependencies": {
-      "nodemon": "^2.0.16"
+        "nodemon": "^2.0.16"
     },
     "engines": {
-      "node": "16.13.0"
-  }
-  }
+        "node": "16.13.0"
+    }
+}
