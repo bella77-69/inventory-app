@@ -11,7 +11,7 @@ Chantelle Pasceri
 
 3. Server Installation: `npm install`
 
-4. In the project directory, you can run: `npm run devStart`
+4. In the project directory, you can run: `npm start`
 
 ## Login
 
