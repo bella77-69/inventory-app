@@ -16,9 +16,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 const PORT = process.env.PORT || 5000;
 
 // ... other app.use middleware 
-app.use(express.static(path.join(__dirname, "client", "build")))
+app.use(express.static(path.join(__dirname, "client")))
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+  res.sendFile(path.join(__dirname, "client"));
 });
 
 app.listen(process.env.PORT || 5000, () => {
