@@ -1,14 +1,14 @@
 const mysql = require('mysql');
 
 const dbConn = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: 'rootroot',
-    database: 'inventory-stock-status'
-    // host: 'us-cdbr-east-05.cleardb.net',
-    // user: 'be61f38c636716',
-    // password: '8a71952f',
-    // database: 'heroku_02a34e026fc2413'
+    // host: 'localhost',
+    // user: 'root',
+    // password: 'rootroot',
+    // database: 'inventory-stock-status'
+    host: 'us-cdbr-east-05.cleardb.net',
+    user: 'baf717b04eedd0',
+    password: 'ff378ebf',
+    database: 'heroku_a67a80bcac74b8f'
 });
 dbConn.connect(function(error) {
     if (error) throw error;
@@ -16,5 +16,4 @@ dbConn.connect(function(error) {
 })
 
 module.exports = dbConn;
-
 
