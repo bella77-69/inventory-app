@@ -18,4 +18,7 @@ Chantelle Pasceri
 email address: admin@admin.com
 password: password
 
+## Heroku 
 
+
+https://git.heroku.com/stock-status-inventory-app.git
