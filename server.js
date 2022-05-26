@@ -21,10 +21,13 @@ app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "client", "build", "index.html"));
 });
 
-app.listen(process.env.PORT || PORT, () => {
-  console.log(`Server connected to port: ${PORT}`);
-});
+// app.listen(process.env.PORT || PORT, () => {
+//   console.log(`Server connected to port: ${PORT}`);
+// });
 
+app.listen(process.env.PORT || 3000, function(){
+  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+});
 //define root route
 app.get("/", (req, res) => {
   res.send("Welcome to Inventory App API");
