@@ -13,7 +13,7 @@ exports.getAllUsers = (req, res) => {
 
 // get user by email
 exports.getUserByEmail = (req, res) => {
-  AdminModel.getUserByEmail(req.params.color, (err, user) => {
+  AdminModel.getUserByEmail(req.params.email, (err, user) => {
     if (err) res.send(err);
     console.log("single email user data", user);
     res.send(user);
