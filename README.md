@@ -21,4 +21,4 @@ password: password
 ## Heroku 
 
 
-https://git.heroku.com/stock-status-inventory-app.git
+https://stock-status-inventory-app.herokuapp.com
