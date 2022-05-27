@@ -26,7 +26,9 @@ const PORT = process.env.PORT || 5000;
 // app.get("/", (req, res) => {
 //   res.send("Welcome to Inventory App API");
 // })
-
+app.get('*', (req, res) =>{
+  res.sendfile(path.resolve(__dirname + "./client/build/index.html"));
+});
 if(process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'))
 }
