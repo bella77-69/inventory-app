@@ -5,7 +5,7 @@ require("dotenv").config();
 const app = express();
 const inventoryRoutes = require("./routes/inventory.route");
 const adminRoutes = require("./routes/admin.route");
-const path = require('path');
+const path = require("path");
 
 app.use(express.json());
 app.use(cors());
@@ -17,36 +17,15 @@ app.use(bodyParser.json());
 app.use("/api/inventory", inventoryRoutes);
 app.use("/api/inventory/admin", adminRoutes);
 
-
-//set up server port
 const PORT = process.env.PORT || 5000;
 
-// // ... other app.use middleware 
-// app.use(express.static(path.join(__dirname, "client")))
-// app.get("*", (req, res) => {
-//   res.sendFile(path.join(__dirname, "client"));
-// });
-
-
-//define root route
-// app.get("/", (req, res) => {
-//   res.send("Welcome to Inventory App API");
-// })
-
-if(process.env.NODE_ENV === 'production') {
-  app.use(express.static('client/build'))
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
 }
-// app.get("*", (req, res) => {
-//   res.sendFile(path.join(__dirname, "client/build"));
-// });
-app.get('*', (req,res) =>{
-  res.sendFile(path.join(__dirname+'/client/build/index.html'));
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname + "/client/build/index.html"));
 });
 app.listen(PORT, (req, res) => {
-  console.log(`Server connected to port: ${PORT}`)
-})
-
-
-
-
-
+  console.log(`Server connected to port: ${PORT}`);
+});
