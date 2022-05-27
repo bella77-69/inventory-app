@@ -26,9 +26,9 @@ const PORT = process.env.PORT || 5000;
 // });
 
 //define root route
-app.get("/", (req, res) => {
-  res.send("Welcome to Inventory App API");
-})
+// app.get("/", (req, res) => {
+//   res.send("Welcome to Inventory App API");
+// })
 
 if(process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'))
