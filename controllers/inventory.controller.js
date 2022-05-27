@@ -6,7 +6,7 @@ exports.getInventoryList = (req, res) => {
   InventoryModel.getAllInventory((err, inventory) => {
    // console.log("We are here");
     if (err) res.send(err);
-    console.log("Inventory", inventory);
+  //  console.log("Inventory", inventory);
     res.send(inventory);
   });
 };

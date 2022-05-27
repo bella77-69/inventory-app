@@ -15,7 +15,7 @@ Inventory.getAllInventory = (result) => {
       console.log("Error while fetching inventory", err);
       result(null, err);
     } else {
-      console.log("Inventory fetched successfully");
+    //  console.log("Inventory fetched successfully");
       result(null, res);
     }
   });
@@ -47,7 +47,7 @@ Inventory.createInventory = (inventoryReqData, result) => {
         console.log("Error while inserting data");
         result(null, err);
       } else {
-        console.log("Inventory created successfully");
+    //    console.log("Inventory created successfully");
         result(null, res);
       }
     }
@@ -76,7 +76,7 @@ Inventory.updateInventory = (id, inventoryReqData, result) => {
         console.log("Error while updating inventory");
         result(null, err);
       } else {
-        console.log("Inventory updated successfully");
+      //  console.log("Inventory updated successfully");
         result(null, res);
       }
     }

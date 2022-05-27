@@ -16,7 +16,7 @@ Admin.getAllUsers  = function(result){
         })  
     }
     else{
-        // console.log('The solution is: ', results);
+        console.log('The solution is: ', results);
         result.send({
         "code":200,
         "result":res
@@ -32,7 +32,7 @@ Admin.getUserByEmail = (email, result) => {
     email,
     (err, res) => {
       if (err) {
-        console.log("Error while fetching data by email", err);
+       console.log("Error while fetching data by email", err);
         result(null, err);
       } else {
         result(null, res);
