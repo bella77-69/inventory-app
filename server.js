@@ -33,7 +33,7 @@ const PORT = process.env.PORT || 5000;
 
 app.use(express.static('client/build'));
 app.get('*', (req, res) =>{
-    res.sendfile(path.resolve(__dirname + "../client/build/index.html"));
+    res.sendfile(path.resolve(__dirname, "./client"));
 });
 app.listen(PORT, (req, res) => {
   console.log(`Server connected to port: ${PORT}`)
