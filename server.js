@@ -21,9 +21,6 @@ const PORT = process.env.PORT || 5000;
 //   res.sendFile(path.join(__dirname, "client"));
 // });
 
-// app.listen(process.env.PORT || 5000, () => {
-//   console.log(`Server connected to port: ${PORT}`);
-// });
 
 //define root route
 // app.get("/", (req, res) => {
