@@ -8,15 +8,19 @@ export default class AdminInventory extends React.Component {
   };
 
   componentDidMount() {
-    axios.get(`https://stock-status-inventory-app.herokuapp.com/api/inventory`).then((response) => {
-      const items = response.data;
-      this.setState({ items });
-    });
+    axios
+      .get(`https://stock-status-inventory-app.herokuapp.com/api/inventory`)
+      .then((response) => {
+        const items = response.data;
+        this.setState({ items });
+      });
   }
 
   deleteRow(id, e) {
     axios
-      .delete(`https://stock-status-inventory-app.herokuapp.com/api/inventory/${id}`)
+      .delete(
+        `https://stock-status-inventory-app.herokuapp.com/api/inventory/${id}`
+      )
       .then((response) => {
         console.log(response.data);
 

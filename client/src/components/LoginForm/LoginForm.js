@@ -25,7 +25,10 @@ function LoginForm(props) {
       password: state.password,
     };
     axios
-      .post("https://stock-status-inventory-app.herokuapp.com/api/inventory/admin", data)
+      .post(
+        "https://stock-status-inventory-app.herokuapp.com/api/inventory/admin",
+        data
+      )
       .then((response) => {
         if (response.status === 200) {
           setState((prevState) => ({

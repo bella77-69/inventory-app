@@ -12,7 +12,7 @@ class Home extends Component {
     axios
       .get("https://stock-status-inventory-app.herokuapp.com/api/inventory")
       .then((response) => {
-        console.log(response)
+        console.log(response);
         this.setState({ items: response.data, activeItems: response.data[0] });
       })
       .catch((error) => {
@@ -22,7 +22,9 @@ class Home extends Component {
 
   getItemById(id) {
     axios
-      .get(`https://stock-status-inventory-app.herokuapp.com/api/inventory${id}`)
+      .get(
+        `https://stock-status-inventory-app.herokuapp.com/api/inventory${id}`
+      )
       .then((response) => {
         this.setState({ activeItems: response.data });
       })
