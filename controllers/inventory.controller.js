@@ -4,7 +4,7 @@ const InventoryModel = require("../models/inventory.model");
 exports.getInventoryList = (req, res) => {
   //console.log('here all inventory list');
   InventoryModel.getAllInventory((err, inventory) => {
-    console.log("We are here");
+   // console.log("We are here");
     if (err) res.send(err);
     console.log("Inventory", inventory);
     res.send(inventory);
@@ -15,7 +15,7 @@ exports.getInventoryList = (req, res) => {
 exports.getInventoryByColor = (req, res) => {
   InventoryModel.getInventoryByColor(req.params.color, (err, inventory) => {
     if (err) res.send(err);
-    console.log("single color inventory data", inventory);
+ //   console.log("single color inventory data", inventory);
     res.send(inventory);
   });
 };
@@ -23,7 +23,7 @@ exports.getInventoryByColor = (req, res) => {
 // create new inventory
 exports.createNewInventory = (req, res) => {
   const inventoryReqData = new InventoryModel(req.body);
-  console.log("inventoryReqData", inventoryReqData);
+//  console.log("inventoryReqData", inventoryReqData);
   // check null
   if (req.body.constructor === Object && Object.keys(req.body).length === 0) {
     res.send(400).send({ success: false, message: "Please fill all fields" });
@@ -44,7 +44,7 @@ exports.getInventoryByID = (req, res) => {
   //console.log('get inventory by id');
   InventoryModel.getInventoryByID(req.params.id, (err, inventory) => {
     if (err) res.send(err);
-    console.log("single inventory data", inventory);
+  //  console.log("single inventory data", inventory);
     res.send(JSON.stringify({ status: 200, error: null, response: inventory }));
   });
 };
