@@ -30,11 +30,6 @@
         "react-app/jest"
       ]
     },
-    "proxies": {
-      "/api": {
-        "origin": "https://stock-status-inventory-app.herokuapp.com"
-      }
-    },
     "browserslist": {
       "production": [
         ">0.2%",

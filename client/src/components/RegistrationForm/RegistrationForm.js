@@ -26,7 +26,7 @@ function RegistrationForm(props) {
         confirmPassword: state.confirmPassword
       };
       axios
-        .post("api/inventory/admin/", data)
+        .post("https://stock-status-inventory-app.herokuapp.com/api/inventory/admin", data)
         .then(function (response) {
           if (response.status === 200) {
             setState((prevState) => ({
