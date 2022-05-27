@@ -15,21 +15,28 @@ app.use(bodyParser.urlencoded({ extended: true }));
 //set up server port
 const PORT = process.env.PORT || 5000;
 
-// ... other app.use middleware 
-app.use(express.static(path.join(__dirname, "client")))
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "client"));
-});
+// // ... other app.use middleware 
+// app.use(express.static(path.join(__dirname, "client")))
+// app.get("*", (req, res) => {
+//   res.sendFile(path.join(__dirname, "client"));
+// });
 
-app.listen(process.env.PORT || 5000, () => {
-  console.log(`Server connected to port: ${PORT}`);
-});
+// app.listen(process.env.PORT || 5000, () => {
+//   console.log(`Server connected to port: ${PORT}`);
+// });
 
 //define root route
 app.get("/", (req, res) => {
   res.send("Welcome to Inventory App API");
-});
+})
 
+if(process.env.NODE_ENV === 'production') {
+  app.use(express.static('client/build'))
+}
+
+app.listen(PORT, (req, res) => {
+  console.log(`Server connected to port: ${PORT}`)
+})
 
 //create inventory/admin routs
 app.use("/api/inventory", inventoryRoutes);
