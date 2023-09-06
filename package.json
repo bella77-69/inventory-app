@@ -19,7 +19,7 @@
         "mysql": "^2.18.1"
     },
     "devDependencies": {
-        "nodemon": "^2.0.16"
+        "nodemon": "^2.0.22"
     },
     "engines": {
         "node": "16.13.0"
